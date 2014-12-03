@@ -50,8 +50,6 @@ gem 'tzinfo'
 gem 'tzinfo-data'
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
   gem 'sqlite3'
 end
 
@@ -61,6 +59,8 @@ group :production do
 end
 
 group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'faker'
   gem 'capybara'
   gem 'guard-rspec'

@@ -9,25 +9,25 @@ class Medium < ActiveRecord::Base
     order(created_at: :desc)
   }
 
-  scope :withKind, ->(kind) { 
+  scope :withKind, ->(kind) {
     where kind: kind 
   }
 
-  scope :withTitleMatching, ->(title) { 
+  scope :withTitleMatching, ->(title) {
     likeTitle = "%#{title}%"
     where ["title like :title", {title: likeTitle}]
   }
 
-  scope :authoredBy, ->(author) { 
+  scope :authoredBy, ->(author) {
     likeAuthor = "%#{author}%"
     where ["author like :author", {title: likeAuthor}]
   }
 
-  scope :createdBefore, -> (date) {
+  scope :createdBefore, ->(date) {
     where ["year_created < ?", date]
   }
 
-  scope :createdAfter, -> (date) {
+  scope :createdAfter, ->(date) {
     where ["? < year_created", date]
   }
 
