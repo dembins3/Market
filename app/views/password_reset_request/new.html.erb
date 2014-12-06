@@ -1,0 +1,16 @@
+
+<%= form_for :reset,  url: '/password_reset_request/' do |f| %>
+
+<table>
+  <tr>
+    <td><%= f.label :email %></td>
+    <td><%= f.text_field :email %></td>
+  </tr>
+  <tr>
+    <td><%= f.button "Submit" %><td>
+  </tr>
+</table>
+    
+<% end %>
+
+
