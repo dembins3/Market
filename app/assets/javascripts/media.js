@@ -132,7 +132,6 @@ var Market = (function (Market) {
 	},
 
 	addMedia: function() {
-	    
 	    var library = Market.Model.User.getCurrentUser().library();
 	    console.log(library);
 	    library.create(this.attr(), {
@@ -191,7 +190,7 @@ var Market = (function (Market) {
 	return {
 	    music: 'Artist',
 	    movie: 'Director',
-	    game:  'Studio',
+	    game:  'Studio'
 	}[kind] || 'Author';
     }
 
@@ -209,7 +208,7 @@ var Market = (function (Market) {
 	    music: "glyphicon-music",
 	    movie: "glyphicon-film",
 	    book:  "glyphicon-book",
-	    game:  "glyphicon-tower",
+	    game:  "glyphicon-tower"
 	}[type]) || defaultGlyphType;
 
 	return "<span class='glyphicon "+glyphType+"'></span>";

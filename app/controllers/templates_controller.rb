@@ -22,11 +22,23 @@ class TemplatesController < ApplicationController
 
   end
 
+  def wishlist
+
+  end
+
   def media
+
+  end
+
+  def wishlistItems
 
   end
   
   def addMedia
+
+  end
+
+  def addWishlistItems
 
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204222245) do
+ActiveRecord::Schema.define(version: 20141207002825) do
 
   create_table "media", force: true do |t|
     t.string   "title"
@@ -50,6 +50,14 @@ ActiveRecord::Schema.define(version: 20141204222245) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+  end
+
+  create_table "wishlist_items", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.string   "kind"
+    t.integer  "user_id"
   end
 
 end

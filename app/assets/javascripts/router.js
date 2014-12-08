@@ -6,7 +6,10 @@ var Market = (function (Market) {
 	    "" : "home",
 	    "add" : "addMedium",
 	    "media/:id": "showMedium",
-	    "library" : "showLibrary"
+	    "library" : "showLibrary",
+        "wishlist": "showWishlist",
+        "addwishlistitem" : "addWishlistItem",
+        "wishlistItems/:id" :"showWishlistItem"
 	},
 
 	addMedium: function() {
@@ -36,6 +39,34 @@ var Market = (function (Market) {
 		}
 	    });
 	},
+
+    addWishlistItem: function() {
+        console.log("loading add Wishlist Item");
+
+        if (this.currentView)
+        this.currentView.remove();
+        this.currentView = new Market.Views.AddWishlistItemView();
+        $("#content").html(this.currentView.el);
+    },
+
+    showWishlistItem: function(id) {
+        var wishlistItem = new Market.Model.WishlistItem({id: id});
+        wishlistItem.fetch({
+            success:function(wishlistItem){
+                if (this.currentView)
+                this.currentView.remove();
+                this.currentView = new Market.Views.WishlistItemDetailView({model: wishlistItem});
+                $("#content").html(this.currentView.el);
+            },
+            error:function() {
+                console.log("Error");
+                $("#content").empty();
+                if (this.currentView)
+                this.currentView.remove();
+                this.currentView = new Market.Views.WishlistItemDetailView({model: null});
+            }
+        });
+    },
 
 	home: function() {
 	    var medium = new Market.Model.Medium({id: window.mediumId});
@@ -73,8 +104,32 @@ var Market = (function (Market) {
 	    function loadError(entity) {
 		console.log("Load error");
 	    }
-	}
-    });
+	},
+
+        showWishlist: function() {
+            var user = Market.Model.User.getCurrentUser();
+            user.fetch({
+                success: function(user) {
+                    var wishlist = user.wishlist();
+
+                    if ( this.currentView )
+                        this.currentView.remove();
+                    this.currentView = new Market.Views.WishlistView({
+                        model: {
+                            user: user,
+                            wishlist: wishlist
+                        }
+                    });
+
+                    $("#content").html(this.currentView.el);
+                }
+            });
+
+            function loadError(entity) {
+                console.log("Load error");
+            }
+        }
+});
 
     Backbone.history.start();
     Market.router = new Market.Router();

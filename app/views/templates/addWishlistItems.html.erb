@@ -1,0 +1,27 @@
+<% kind_select_options = [['Book', 1], ['Music', 2], ['Movie', 3], ['Game', 4]] %>
+<div class="content-pane">
+  <h2 class="title center-text">Add Wishlist Item</h2>
+  <%= form_tag do %>
+      <table><tr>
+
+        <wishlistItemsType class="mediaType">
+          <td><%= label_tag :kind, "Type of Wishlist Item: "%></td>
+          <td><%= select_tag :kind, options_for_select(kind_select_options), id: "kind" %></td>
+        </wishlistItemsType></tr>
+
+
+        <field class="field">
+          <tr>
+            <td><%= label_tag :title, "Title: ", id: "title-label" %></td>
+            <td><%= text_field_tag :title%></td>
+          </tr>
+        </field>
+
+        <buttonCreate class="buttonCreate">
+          <tr><td>
+            <%= button_tag "Add!", type: 'button', id: 'addwl-button' %></td></tr>
+        </buttonCreate>
+      </table>
+
+  <% end %>
+</div>

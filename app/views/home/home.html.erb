@@ -6,6 +6,9 @@
 <script type="text/html" rel="import" href="/templates/addMedia.html" id="add-media-template"></script>
 <script type="text/html" rel="import" href="/templates/missingMedia.html" id="missing-media-template"></script>
 <script type="text/html" rel="import" href="/templates/mediumCell.html" id="medium-cell-template"></script>
+<script type="text/html" rel="import" href="/templates/wishlist.html" id="wishlist-template"></script>
+<script type="text/html" rel="import" href="/templates/wishlistItems.html" id="wishlistItems-template"></script>
+<script type="text/html" rel="import" href="/templates/addWishlistItems.html" id="addWishlistItems-template"></script>
 <% end %>
 
 <% content_for :backbone do %>
@@ -13,8 +16,10 @@
 <%= javascript_include_tag 'banner' %>
 <%= javascript_include_tag 'menu' %>
 <%= javascript_include_tag 'library' %>
-<%= javascript_include_tag 'media' %> 
+<%= javascript_include_tag 'wishlist' %>
+<%= javascript_include_tag 'media' %>
 <%= javascript_include_tag 'user' %>
+<%= javascript_include_tag 'wishlistItems' %>
 <% end %>
 
 <div id="canvas">

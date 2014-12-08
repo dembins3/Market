@@ -24,7 +24,25 @@ var Market = (function (Market) {
 		});
 		return myLibrary;
 	    }
-	}
+	},
+
+        wishlist: function() {
+            return this.get("wishlist") || getNewWishlist.call(this);
+            function getNewWishlist() {
+                console.log("creating wishlist");
+                var url = "/users/"+this.get("id")+"/wishlistitems";
+                var myWishlist = new Market.Model.WishlistItems();
+                myWishlist.url = url;
+                this.set("wishlist", myWishlist);
+                var self = this;
+                myWishlist.fetch({
+                    success: function() {
+                        self.hasbenFetched = true;
+                    }
+                });
+                return myWishlist;
+            }
+        }
     });
 
     User.getCurrentUser = function () {

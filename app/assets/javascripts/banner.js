@@ -6,13 +6,12 @@ var BannerView = Backbone.View.extend({
 	this.nameField = this.$(".username");
 	
 	const self = this;
-	
 	Market.Model.User.getCurrentUser().fetch({
 	    success:function(user) {
 		self.nameField.html(user.get("name"));
 	    }
 	});
-    }, 
+    },
     render: function() {
 	this.$el.html(this.template());
 	return this;
@@ -20,6 +19,9 @@ var BannerView = Backbone.View.extend({
 });
 
 
-templateLoader.on("load:templates", function () {
-    window.bannerView = new BannerView();
+$(function() {
+    templateLoader.on("load:templates", function () {
+        window.bannerView = new BannerView();
+    });
 });
+
