@@ -6,7 +6,7 @@ var Market = (function (Market) {
             this.template = _.template($("#wishlist-template").html());
             this.render();
             var self = this;
-            this.model.wishlist.on("addWishlistItem", function (model) {
+            this.model.wishlist.on("add", function (model) {
                 self.$("#mediaList").append(getView(model).el);
             });
         },

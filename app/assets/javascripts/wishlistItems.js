@@ -12,7 +12,7 @@ var Market = (function (Market) {
 
         initialize: function() {
             if ( this.get("id") )
-                this.url = "/wishlistItems/" + this.get("id");
+                this.url = "/wishlistitems/" + this.get("id");
         },
 
         parse: function (res) {
@@ -20,7 +20,7 @@ var Market = (function (Market) {
                 .extend({
                     owner: res.user_id
                 })
-                .pick("title", "kind")
+                .pick("title", "kind", "id", "owner")
                 .value();
         },
 
@@ -43,7 +43,7 @@ var Market = (function (Market) {
 
     Market.Model.WishlistItems = Backbone.Collection.extend({
         model: Market.Model.WishlistItem,
-        url: "/wishlistItems"
+        url: "/wishlistitems"
     });
 
     Market.Views.WishlistItemDetailView = Backbone.View.extend({

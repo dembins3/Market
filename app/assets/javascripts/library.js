@@ -22,6 +22,6 @@ var Market = (function (Market) {
     function getView(model) {
 	var view = new Market.Views.MediumCell({ model: model });
 	view.$("a").first().attr("href", "/#/media/"+model.get("id"));
-	return view;	
+	return view;
     }
 })(Market || {});

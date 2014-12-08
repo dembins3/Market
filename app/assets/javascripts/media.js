@@ -124,7 +124,7 @@ var Market = (function (Market) {
 	},
 
 	updateLabels: function() {
-	    var val = this.$('select').val()
+	    var val = this.$('select').val();
 	    var kind = this.$('select option[value="'+val+'"]').html();
 	    kind = kind.toLowerCase();
 	    this.authorLabel.html(capitalize(getAuthorLabel(kind)));
