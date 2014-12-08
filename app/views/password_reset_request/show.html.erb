@@ -2,11 +2,11 @@
 <%= form_for :reset, url: "/password_reset_request/#{@reset_request.link}", method: "put" do |f| %>
 <table>
   <tr>
-    <td><%= f.label :new_password %></td>
+    <td style="color: #ffffff"><%= f.label :new_password %></td>
     <td><%= f.password_field :new_password %></td>
   </tr>
   <tr>
-    <td><%= f.label :confirm_password %></td>
+    <td style="color: #ffffff"><%= f.label :confirm_password %></td>
     <td><%= f.password_field :confirm_password %></td>
   </tr>
   <tr>

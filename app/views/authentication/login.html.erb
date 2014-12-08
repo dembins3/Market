@@ -1,20 +1,21 @@
 <div id="canvas">
-<h2 style="padding-left: 10px;">Log in</h2>
+
+  <div id="textColor"><h2 style="padding-left: 10px;">Log in</h2></div>
 <%= content_tag :h3 do %>
-Failed username password combination
+<div id="textColor">Failed username password combination</div>
 <% end if @failed_attempt %>
 
 <%= form_for(:session, :url => '/authenticate') do |f| %>
 <table>
   <div class="field">
     <tr>
-      <td><%= f.label :email %></td>
+      <td style="color: #ffffff"><%= f.label :email %></td>
       <td><%= f.text_field :email %></td>
     </tr>
   </div>
   <div class="field">
     <tr>
-      <td><%= f.label :password %></td>
+      <td style="color: #ffffff"><%= f.label :password %></td>
       <td><%= f.password_field :password %></td>
     </tr>
   </div>

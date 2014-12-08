@@ -1,9 +1,12 @@
 <div id="canvas">
+
+  <div id="textColor"><h2 style="padding-left: 10px;"> Reset Password </h2></div>
+
 <%= form_for :reset,  url: '/password_reset_request/' do |f| %>
 
 <table>
   <tr>
-    <td><%= f.label :email %></td>
+    <td style="color: #ffffff"><%= f.label :email %></td>
     <td><%= f.text_field :email %></td>
   </tr>
   <tr>

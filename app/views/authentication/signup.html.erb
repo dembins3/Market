@@ -1,30 +1,30 @@
 <div id="canvas">
-<h2 style="padding-left: 10px;"> Sign up </h2>
+<div id="textColor"><h2 style="padding-left: 10px;"> Sign up </h2></div>
 
 
 <%= form_for(:session, url: '/signupHook') do |f| %>
     <table>
   <div class="field">
-    <tr><td><%= f.label :name %></td>
+    <tr><td style="color: #ffffff"><%= f.label :name %></td>
     <td><%= f.text_field :name %></td></tr>
   </div>
 
   <div class="field">
-    <tr><td><%= f.label :phone %></td>
+    <tr><td style="color: #ffffff"><%= f.label :phone %></td>
     <td><%= f.text_field :phone %></td></tr>
   </div>
 
   <div class="field">
-    <tr><td><%= f.label :zipcode %></td>
+    <tr><td style="color: #ffffff"><%= f.label :zipcode %></td>
     <td><%= f.text_field :zipcode %></td></tr>
   </div>
 
   <div class="field">
-    <tr><td><%= f.label :email %></td>
+    <tr><td style="color: #ffffff"><%= f.label :email %></td>
     <td><%= f.text_field :email %></td></tr>
   </div>
   <div class="field">
-    <tr><td><%= f.label :password %></td>
+    <tr><td style="color: #ffffff"><%= f.label :password %></td>
     <td><%= f.password_field :password %></td></tr>
   </div>
   <div class="actions">
