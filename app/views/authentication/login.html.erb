@@ -5,23 +5,26 @@ Failed username password combination
 <% end if @failed_attempt %>
 
 <%= form_for(:session, :url => '/authenticate') do |f| %>
-    <table>
+<table>
   <div class="field">
-    <tr><td><%= f.label :email %></td>
-    <td><%= f.text_field :email %></td></tr>
+    <tr>
+      <td><%= f.label :email %></td>
+      <td><%= f.text_field :email %></td>
+    </tr>
   </div>
   <div class="field">
-    <tr><td><%= f.label :password %></td>
-    <td><%= f.password_field :password %></td></tr>
+    <tr>
+      <td><%= f.label :password %></td>
+      <td><%= f.password_field :password %></td>
+    </tr>
   </div>
   <div class="actions">
     <tr><td><%= f.submit "Sign in" %></td></tr>
-
   </div>
-
 
 <% end %>
 <div class="actions">
   <tr><td><%= button_to "New User", "/signup", :class => "button", :method => :get  %></td></tr>
+  <tr><td><%= button_to "Forgot password",  "/password_reset_request/new", class: "button", method: :get %></td></tr>
 </div>
 </table>
