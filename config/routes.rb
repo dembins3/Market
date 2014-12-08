@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post 'authenticate' => 'authentication#authenticate'
   get  'login'        => 'authentication#login'
   get  'signup'       => 'authentication#signup'
+  get  'logout'       => 'authentication#logout'
   post 'signupHook'   => 'authentication#signupHook'
 
   post 'search'       => 'search#create'
