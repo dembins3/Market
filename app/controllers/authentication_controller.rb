@@ -21,6 +21,11 @@ class AuthenticationController < ApplicationController
     @failed_attempt |= params[:failure]
   end
 
+  def logout
+    session[:id] = nil
+    redirect_to "/"
+  end
+
   def signup
     
   end
